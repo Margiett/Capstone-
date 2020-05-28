@@ -9,3 +9,23 @@
 import Foundation
 import FirebaseFirestore
 import FirebaseAuth
+
+class DatabaseService {
+    static let userCollection = "user"
+    
+    // reference to firebase firestore database
+    private let db = Firestore.firestore()
+    
+     // private init() {}
+    static let shared = DatabaseService()
+    
+    
+    //Creating the user(dog owner)
+    public func createUser(user: UserModel, authDataResult: AuthDataResult, completion: @escaping (Result<Bool, Error>) -> ()) {
+        
+    }
+    
+    
+    
+    
+}
