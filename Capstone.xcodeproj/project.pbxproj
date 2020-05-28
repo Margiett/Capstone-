@@ -3,11 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		12F387AF79288472F9606B6C /* Pods_CapstoneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4944357C51EAEF5515E89FEC /* Pods_CapstoneTests.framework */; };
+		9F325C2C247F893F003C39F4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F325C2B247F893F003C39F4 /* Login.storyboard */; };
+		9F325C2F24801034003C39F4 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F325C2E24801034003C39F4 /* DatabaseService.swift */; };
 		9F7DCDBF247DCA3800ABB84D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7DCDBE247DCA3800ABB84D /* AppDelegate.swift */; };
 		9F7DCDC1247DCA3800ABB84D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7DCDC0247DCA3800ABB84D /* SceneDelegate.swift */; };
 		9F7DCDC3247DCA3800ABB84D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7DCDC2247DCA3800ABB84D /* ViewController.swift */; };
@@ -37,6 +39,8 @@
 		3EC48BAA1DCBCC4BA223CDD8 /* Pods-CapstoneTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CapstoneTests.release.xcconfig"; path = "Target Support Files/Pods-CapstoneTests/Pods-CapstoneTests.release.xcconfig"; sourceTree = "<group>"; };
 		4944357C51EAEF5515E89FEC /* Pods_CapstoneTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CapstoneTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		67E9BC9D607F37E476E18964 /* Pods-Capstone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Capstone.release.xcconfig"; path = "Target Support Files/Pods-Capstone/Pods-Capstone.release.xcconfig"; sourceTree = "<group>"; };
+		9F325C2B247F893F003C39F4 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		9F325C2E24801034003C39F4 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		9F7DCDBB247DCA3800ABB84D /* Capstone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Capstone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F7DCDBE247DCA3800ABB84D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F7DCDC0247DCA3800ABB84D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,7 +84,6 @@
 				1CAF9675D550548D42607E6E /* Pods-CapstoneTests.debug.xcconfig */,
 				3EC48BAA1DCBCC4BA223CDD8 /* Pods-CapstoneTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -91,6 +94,24 @@
 				4944357C51EAEF5515E89FEC /* Pods_CapstoneTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9F325C2A247F88F2003C39F4 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				9F7DCDCC247DCA3A00ABB84D /* LaunchScreen.storyboard */,
+				9F7DCDC4247DCA3800ABB84D /* Main.storyboard */,
+				9F325C2B247F893F003C39F4 /* Login.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		9F325C2D24800EDD003C39F4 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				9F325C2E24801034003C39F4 /* DatabaseService.swift */,
+			);
+			path = Firebase;
 			sourceTree = "<group>";
 		};
 		9F7DCDB2247DCA3800ABB84D = {
@@ -116,12 +137,12 @@
 		9F7DCDBD247DCA3800ABB84D /* Capstone */ = {
 			isa = PBXGroup;
 			children = (
+				9F325C2D24800EDD003C39F4 /* Firebase */,
+				9F325C2A247F88F2003C39F4 /* Storyboard */,
 				9F7DCDBE247DCA3800ABB84D /* AppDelegate.swift */,
 				9F7DCDC0247DCA3800ABB84D /* SceneDelegate.swift */,
 				9F7DCDC2247DCA3800ABB84D /* ViewController.swift */,
-				9F7DCDC4247DCA3800ABB84D /* Main.storyboard */,
 				9F7DCDCA247DCA3A00ABB84D /* Assets.xcassets */,
-				9F7DCDCC247DCA3A00ABB84D /* LaunchScreen.storyboard */,
 				9F7DCDCF247DCA3A00ABB84D /* Info.plist */,
 				9F7DCDE3247F7EAD00ABB84D /* GoogleService-Info.plist */,
 				9F7DCDC7247DCA3800ABB84D /* Capstone.xcdatamodeld */,
@@ -149,6 +170,7 @@
 				9F7DCDB7247DCA3800ABB84D /* Sources */,
 				9F7DCDB8247DCA3800ABB84D /* Frameworks */,
 				9F7DCDB9247DCA3800ABB84D /* Resources */,
+				0B5628FE8FEA11FEC505D83E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -224,6 +246,7 @@
 				9F7DCDCE247DCA3A00ABB84D /* LaunchScreen.storyboard in Resources */,
 				9F7DCDE4247F7EAD00ABB84D /* GoogleService-Info.plist in Resources */,
 				9F7DCDCB247DCA3A00ABB84D /* Assets.xcassets in Resources */,
+				9F325C2C247F893F003C39F4 /* Login.storyboard in Resources */,
 				9F7DCDC6247DCA3800ABB84D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,6 +261,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0B5628FE8FEA11FEC505D83E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Capstone/Pods-Capstone-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Capstone/Pods-Capstone-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Capstone/Pods-Capstone-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		3C1BBA4D17329D2A5A931963 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -290,6 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F7DCDC3247DCA3800ABB84D /* ViewController.swift in Sources */,
+				9F325C2F24801034003C39F4 /* DatabaseService.swift in Sources */,
 				9F7DCDBF247DCA3800ABB84D /* AppDelegate.swift in Sources */,
 				9F7DCDC9247DCA3800ABB84D /* Capstone.xcdatamodeld in Sources */,
 				9F7DCDC1247DCA3800ABB84D /* SceneDelegate.swift in Sources */,
