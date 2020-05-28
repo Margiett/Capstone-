@@ -11,6 +11,12 @@
 		9F325C2C247F893F003C39F4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F325C2B247F893F003C39F4 /* Login.storyboard */; };
 		9F325C2F24801034003C39F4 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F325C2E24801034003C39F4 /* DatabaseService.swift */; };
 		9F325C31248012E7003C39F4 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F325C30248012E7003C39F4 /* UserModel.swift */; };
+		9F325C3424801C8E003C39F4 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F325C3324801C8E003C39F4 /* FirebaseAuthManager.swift */; };
+		9F325C3724801D13003C39F4 /* UIViewController + Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F325C3624801D13003C39F4 /* UIViewController + Alerts.swift */; };
+		9F325C3A24801FE7003C39F4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F325C3924801FE7003C39F4 /* LoginViewController.swift */; };
+		9F325C3D248029A3003C39F4 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F325C3C248029A3003C39F4 /* MainTabBarController.swift */; };
+		9F325C3F24802A69003C39F4 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F325C3E24802A69003C39F4 /* UIViewControllerExtensions.swift */; };
+		9F325C4124802B89003C39F4 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F325C4024802B89003C39F4 /* SignUpViewController.swift */; };
 		9F7DCDBF247DCA3800ABB84D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7DCDBE247DCA3800ABB84D /* AppDelegate.swift */; };
 		9F7DCDC1247DCA3800ABB84D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7DCDC0247DCA3800ABB84D /* SceneDelegate.swift */; };
 		9F7DCDC3247DCA3800ABB84D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7DCDC2247DCA3800ABB84D /* ViewController.swift */; };
@@ -43,6 +49,12 @@
 		9F325C2B247F893F003C39F4 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		9F325C2E24801034003C39F4 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		9F325C30248012E7003C39F4 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		9F325C3324801C8E003C39F4 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
+		9F325C3624801D13003C39F4 /* UIViewController + Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Alerts.swift"; sourceTree = "<group>"; };
+		9F325C3924801FE7003C39F4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		9F325C3C248029A3003C39F4 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		9F325C3E24802A69003C39F4 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		9F325C4024802B89003C39F4 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		9F7DCDBB247DCA3800ABB84D /* Capstone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Capstone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F7DCDBE247DCA3800ABB84D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F7DCDC0247DCA3800ABB84D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,8 +123,8 @@
 		9F325C2D24800EDD003C39F4 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
-				9F325C30248012E7003C39F4 /* UserModel.swift */,
 				9F325C2E24801034003C39F4 /* DatabaseService.swift */,
+				9F325C3324801C8E003C39F4 /* FirebaseAuthManager.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -120,8 +132,35 @@
 		9F325C32248012ED003C39F4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9F325C30248012E7003C39F4 /* UserModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		9F325C3524801CD2003C39F4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9F325C3624801D13003C39F4 /* UIViewController + Alerts.swift */,
+				9F325C3E24802A69003C39F4 /* UIViewControllerExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9F325C3824801F59003C39F4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9F325C3924801FE7003C39F4 /* LoginViewController.swift */,
+				9F325C4024802B89003C39F4 /* SignUpViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9F325C3B24802928003C39F4 /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				9F325C3C248029A3003C39F4 /* MainTabBarController.swift */,
+			);
+			path = TabBarController;
 			sourceTree = "<group>";
 		};
 		9F7DCDB2247DCA3800ABB84D = {
@@ -147,6 +186,9 @@
 		9F7DCDBD247DCA3800ABB84D /* Capstone */ = {
 			isa = PBXGroup;
 			children = (
+				9F325C3B24802928003C39F4 /* TabBarController */,
+				9F325C3824801F59003C39F4 /* Controllers */,
+				9F325C3524801CD2003C39F4 /* Extensions */,
 				9F325C32248012ED003C39F4 /* Model */,
 				9F325C2D24800EDD003C39F4 /* Firebase */,
 				9F325C2A247F88F2003C39F4 /* Storyboard */,
@@ -340,10 +382,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F325C3A24801FE7003C39F4 /* LoginViewController.swift in Sources */,
+				9F325C3F24802A69003C39F4 /* UIViewControllerExtensions.swift in Sources */,
 				9F7DCDC3247DCA3800ABB84D /* ViewController.swift in Sources */,
+				9F325C3D248029A3003C39F4 /* MainTabBarController.swift in Sources */,
+				9F325C3424801C8E003C39F4 /* FirebaseAuthManager.swift in Sources */,
 				9F325C2F24801034003C39F4 /* DatabaseService.swift in Sources */,
+				9F325C4124802B89003C39F4 /* SignUpViewController.swift in Sources */,
 				9F7DCDBF247DCA3800ABB84D /* AppDelegate.swift in Sources */,
 				9F7DCDC9247DCA3800ABB84D /* Capstone.xcdatamodeld in Sources */,
+				9F325C3724801D13003C39F4 /* UIViewController + Alerts.swift in Sources */,
 				9F325C31248012E7003C39F4 /* UserModel.swift in Sources */,
 				9F7DCDC1247DCA3800ABB84D /* SceneDelegate.swift in Sources */,
 			);

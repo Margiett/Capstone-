@@ -23,6 +23,16 @@ class DatabaseService {
     //Creating the user(dog owner)
     public func createUser(user: UserModel, authDataResult: AuthDataResult, completion: @escaping (Result<Bool, Error>) -> ()) {
         
+        guard let email = authDataResult.user.email else {return}
+        
+        db.collection(DatabaseService.userCollection).document(authDataResult.user.uid).setData(["name": user.name, "email": email, "userId": authDataResult.user.uid, "breed": user.breed, "dogName": user.dogName,"age": user.age, "state": user.state]) { (error) in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(true))
+            }
+        }
+        
     }
     
     
