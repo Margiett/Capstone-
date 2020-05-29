@@ -19,13 +19,13 @@
 		9F325C4124802B89003C39F4 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F325C4024802B89003C39F4 /* SignUpViewController.swift */; };
 		9F7DCDBF247DCA3800ABB84D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7DCDBE247DCA3800ABB84D /* AppDelegate.swift */; };
 		9F7DCDC1247DCA3800ABB84D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7DCDC0247DCA3800ABB84D /* SceneDelegate.swift */; };
-		9F7DCDC3247DCA3800ABB84D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7DCDC2247DCA3800ABB84D /* ViewController.swift */; };
 		9F7DCDC6247DCA3800ABB84D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F7DCDC4247DCA3800ABB84D /* Main.storyboard */; };
 		9F7DCDC9247DCA3800ABB84D /* Capstone.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9F7DCDC7247DCA3800ABB84D /* Capstone.xcdatamodeld */; };
 		9F7DCDCB247DCA3A00ABB84D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F7DCDCA247DCA3A00ABB84D /* Assets.xcassets */; };
 		9F7DCDCE247DCA3A00ABB84D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F7DCDCC247DCA3A00ABB84D /* LaunchScreen.storyboard */; };
 		9F7DCDD9247DCA3A00ABB84D /* CapstoneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7DCDD8247DCA3A00ABB84D /* CapstoneTests.swift */; };
 		9F7DCDE4247F7EAD00ABB84D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F7DCDE3247F7EAD00ABB84D /* GoogleService-Info.plist */; };
+		9F84A3692480BC5F008111BC /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F84A3682480BC5F008111BC /* FeedViewController.swift */; };
 		A537F9A18CDB0DBF09965AD6 /* Pods_Capstone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0596883DA6CE675EE7CB7D7E /* Pods_Capstone.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,7 +58,6 @@
 		9F7DCDBB247DCA3800ABB84D /* Capstone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Capstone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F7DCDBE247DCA3800ABB84D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F7DCDC0247DCA3800ABB84D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9F7DCDC2247DCA3800ABB84D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9F7DCDC5247DCA3800ABB84D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9F7DCDC8247DCA3800ABB84D /* Capstone.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Capstone.xcdatamodel; sourceTree = "<group>"; };
 		9F7DCDCA247DCA3A00ABB84D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -68,6 +67,7 @@
 		9F7DCDD8247DCA3A00ABB84D /* CapstoneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapstoneTests.swift; sourceTree = "<group>"; };
 		9F7DCDDA247DCA3A00ABB84D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F7DCDE3247F7EAD00ABB84D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9F84A3682480BC5F008111BC /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +151,7 @@
 			children = (
 				9F325C3924801FE7003C39F4 /* LoginViewController.swift */,
 				9F325C4024802B89003C39F4 /* SignUpViewController.swift */,
+				9F84A3682480BC5F008111BC /* FeedViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -194,7 +195,6 @@
 				9F325C2A247F88F2003C39F4 /* Storyboard */,
 				9F7DCDBE247DCA3800ABB84D /* AppDelegate.swift */,
 				9F7DCDC0247DCA3800ABB84D /* SceneDelegate.swift */,
-				9F7DCDC2247DCA3800ABB84D /* ViewController.swift */,
 				9F7DCDCA247DCA3A00ABB84D /* Assets.xcassets */,
 				9F7DCDCF247DCA3A00ABB84D /* Info.plist */,
 				9F7DCDE3247F7EAD00ABB84D /* GoogleService-Info.plist */,
@@ -384,7 +384,6 @@
 			files = (
 				9F325C3A24801FE7003C39F4 /* LoginViewController.swift in Sources */,
 				9F325C3F24802A69003C39F4 /* UIViewControllerExtensions.swift in Sources */,
-				9F7DCDC3247DCA3800ABB84D /* ViewController.swift in Sources */,
 				9F325C3D248029A3003C39F4 /* MainTabBarController.swift in Sources */,
 				9F325C3424801C8E003C39F4 /* FirebaseAuthManager.swift in Sources */,
 				9F325C2F24801034003C39F4 /* DatabaseService.swift in Sources */,
@@ -393,6 +392,7 @@
 				9F7DCDC9247DCA3800ABB84D /* Capstone.xcdatamodeld in Sources */,
 				9F325C3724801D13003C39F4 /* UIViewController + Alerts.swift in Sources */,
 				9F325C31248012E7003C39F4 /* UserModel.swift in Sources */,
+				9F84A3692480BC5F008111BC /* FeedViewController.swift in Sources */,
 				9F7DCDC1247DCA3800ABB84D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
