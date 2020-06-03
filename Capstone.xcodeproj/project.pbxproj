@@ -26,6 +26,11 @@
 		9F7DCDD9247DCA3A00ABB84D /* CapstoneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7DCDD8247DCA3A00ABB84D /* CapstoneTests.swift */; };
 		9F7DCDE4247F7EAD00ABB84D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F7DCDE3247F7EAD00ABB84D /* GoogleService-Info.plist */; };
 		9F84A3692480BC5F008111BC /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F84A3682480BC5F008111BC /* FeedViewController.swift */; };
+		9F84A36B2486B444008111BC /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F84A36A2486B444008111BC /* CommentModel.swift */; };
+		9F84A36D2486C6DB008111BC /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F84A36C2486C6DB008111BC /* Date+Extensions.swift */; };
+		9F84A36F2486C834008111BC /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F84A36E2486C834008111BC /* StorageService.swift */; };
+		9F84A3712486E4DD008111BC /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F84A3702486E4DD008111BC /* Favorite.swift */; };
+		9F84A3742487F47C008111BC /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F84A3732487F47C008111BC /* PostModel.swift */; };
 		A537F9A18CDB0DBF09965AD6 /* Pods_Capstone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0596883DA6CE675EE7CB7D7E /* Pods_Capstone.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +73,11 @@
 		9F7DCDDA247DCA3A00ABB84D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F7DCDE3247F7EAD00ABB84D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9F84A3682480BC5F008111BC /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		9F84A36A2486B444008111BC /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
+		9F84A36C2486C6DB008111BC /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		9F84A36E2486C834008111BC /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		9F84A3702486E4DD008111BC /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
+		9F84A3732487F47C008111BC /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +135,7 @@
 			children = (
 				9F325C2E24801034003C39F4 /* DatabaseService.swift */,
 				9F325C3324801C8E003C39F4 /* FirebaseAuthManager.swift */,
+				9F84A36E2486C834008111BC /* StorageService.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -133,6 +144,9 @@
 			isa = PBXGroup;
 			children = (
 				9F325C30248012E7003C39F4 /* UserModel.swift */,
+				9F84A36A2486B444008111BC /* CommentModel.swift */,
+				9F84A3702486E4DD008111BC /* Favorite.swift */,
+				9F84A3732487F47C008111BC /* PostModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -142,6 +156,7 @@
 			children = (
 				9F325C3624801D13003C39F4 /* UIViewController + Alerts.swift */,
 				9F325C3E24802A69003C39F4 /* UIViewControllerExtensions.swift */,
+				9F84A36C2486C6DB008111BC /* Date+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -386,10 +401,15 @@
 				9F325C3F24802A69003C39F4 /* UIViewControllerExtensions.swift in Sources */,
 				9F325C3D248029A3003C39F4 /* MainTabBarController.swift in Sources */,
 				9F325C3424801C8E003C39F4 /* FirebaseAuthManager.swift in Sources */,
+				9F84A3742487F47C008111BC /* PostModel.swift in Sources */,
 				9F325C2F24801034003C39F4 /* DatabaseService.swift in Sources */,
+				9F84A36B2486B444008111BC /* CommentModel.swift in Sources */,
 				9F325C4124802B89003C39F4 /* SignUpViewController.swift in Sources */,
 				9F7DCDBF247DCA3800ABB84D /* AppDelegate.swift in Sources */,
 				9F7DCDC9247DCA3800ABB84D /* Capstone.xcdatamodeld in Sources */,
+				9F84A3712486E4DD008111BC /* Favorite.swift in Sources */,
+				9F84A36D2486C6DB008111BC /* Date+Extensions.swift in Sources */,
+				9F84A36F2486C834008111BC /* StorageService.swift in Sources */,
 				9F325C3724801D13003C39F4 /* UIViewController + Alerts.swift in Sources */,
 				9F325C31248012E7003C39F4 /* UserModel.swift in Sources */,
 				9F84A3692480BC5F008111BC /* FeedViewController.swift in Sources */,
