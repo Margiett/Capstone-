@@ -39,4 +39,4 @@ class FeedCell: UICollectionViewCell {
             
         }
     }
-}
+

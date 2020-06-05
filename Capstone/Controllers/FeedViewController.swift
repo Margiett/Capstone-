@@ -8,15 +8,30 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
 
 class FeedViewController: UIViewController {
+    
+    @IBOutlet weak var feedCollectionView: UICollectionView!
+    
+    private var listener: ListenerRegistration?
+    
+    private var feed = [Post]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.feedCollectionView.reloadData()
+            }
+            
+        }
+    }
     
   
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        feedCollectionView.dataSource = self
+        feedCollectionView.delegate = self
+       
     }
     
     @IBAction func signOutButtonPressed(_ sender: UIBarButtonItem) {
@@ -30,4 +45,24 @@ class FeedViewController: UIViewController {
         }
     }
 
+}
+
+extension FeedViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return feed.count
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "feedCell", for: indexPath) as? FeedCell else {
+            fatalError("could not downcast to feedCell")
+        }
+        let post = feed[indexPath.row]
+        cell.confirgureCell(post: post)
+        return cell
+    }
+}
+
+extension FeedViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionView)
 }

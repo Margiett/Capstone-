@@ -26,6 +26,7 @@ extension Post {
         self.caption = dictionary["caption"] as? String ?? "no caption"
         self.userName = dictionary["userName"] as? String ?? "no user name"
         self.userId = dictionary["userId"] as? String ?? "no user ID"
+        self.postID = dictionary["postID"] as? String ?? "no post id"
         
     }
 }
