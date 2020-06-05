@@ -34,6 +34,27 @@ class FeedViewController: UIViewController {
        
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        listener = Firestore.firestore().collection(DatabaseService.postCollection).addSnapshotListener({[weak self] (snapshot, error) in
+            if let error = error {
+                DispatchQueue.main.async {
+                    self?.showAlert(title: "Try again later", message: "There is a FireStore error: \(error.localizedDescription)")
+                }
+            } else if let snapshot = snapshot {
+                let posts = snapshot.documents.map { Post($0.data()) }
+                self?.feed = posts
+            }
+        })
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        listener?.remove()
+    }
+    
+    //MARK: the sign out button needs to be removed from here once, i have create the side meanue 
     @IBAction func signOutButtonPressed(_ sender: UIBarButtonItem) {
         do {
             try Auth.auth().signOut()
@@ -63,6 +84,12 @@ extension FeedViewController: UICollectionViewDataSource {
     }
 }
 
-extension FeedViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionView)
+extension FeedViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let maxSize = UIScreen.main.bounds
+        return CGSize(width: maxSize.width, height: maxSize.height * 0.70)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+    }
 }

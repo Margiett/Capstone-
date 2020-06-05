@@ -14,6 +14,7 @@ class DatabaseService {
     static let userCollection = "user"
     static let commentCollection = "comments"
     static let favoriteCollection = "favorites"
+    static let postCollection = "post"
     
     // reference to firebase firestore database
     private let db = Firestore.firestore()
