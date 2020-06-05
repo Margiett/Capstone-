@@ -15,6 +15,7 @@ struct Post {
     let caption: String
     let userName: String
     let userId: String
+    let postID: String 
     
 }
 
