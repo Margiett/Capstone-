@@ -132,7 +132,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="8Wi-iW-DpC">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="8Wi-iW-DpC" customClass="FeedCell" customModule="Capstone" customModuleProvider="target">
                                         <rect key="frame" x="53" y="0.0" width="308" height="350"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ZqT-1d-NYf">
@@ -200,6 +200,15 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="308" height="350"/>
+                                        <connections>
+                                            <outlet property="captionLabel" destination="1Yn-0V-krx" id="1hw-sA-lIv"/>
+                                            <outlet property="commentButton" destination="WbX-gl-zXV" id="e7d-Ac-2fh"/>
+                                            <outlet property="datePostLabel" destination="V44-uN-9yk" id="Q33-24-eeH"/>
+                                            <outlet property="favoriteButton" destination="PI5-PK-1XJ" id="bPs-80-jl8"/>
+                                            <outlet property="postPicture" destination="3CE-al-gw7" id="ndw-Bz-Q4c"/>
+                                            <outlet property="userProfilePic" destination="9FV-xf-dst" id="Ndd-YY-qcN"/>
+                                            <outlet property="username" destination="BWs-bK-9Ij" id="r9h-86-qbS"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>

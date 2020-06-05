@@ -31,6 +31,7 @@
 		9F84A36F2486C834008111BC /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F84A36E2486C834008111BC /* StorageService.swift */; };
 		9F84A3712486E4DD008111BC /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F84A3702486E4DD008111BC /* Favorite.swift */; };
 		9F84A3742487F47C008111BC /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F84A3732487F47C008111BC /* PostModel.swift */; };
+		9F84A3772489E975008111BC /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F84A3762489E975008111BC /* FeedCell.swift */; };
 		A537F9A18CDB0DBF09965AD6 /* Pods_Capstone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0596883DA6CE675EE7CB7D7E /* Pods_Capstone.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,7 @@
 		9F84A36E2486C834008111BC /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		9F84A3702486E4DD008111BC /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 		9F84A3732487F47C008111BC /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		9F84A3762489E975008111BC /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +204,7 @@
 		9F7DCDBD247DCA3800ABB84D /* Capstone */ = {
 			isa = PBXGroup;
 			children = (
+				9F84A3752489E932008111BC /* Cell */,
 				9F325C3B24802928003C39F4 /* TabBarController */,
 				9F325C3824801F59003C39F4 /* Controllers */,
 				9F325C3524801CD2003C39F4 /* Extensions */,
@@ -225,6 +228,14 @@
 				9F7DCDDA247DCA3A00ABB84D /* Info.plist */,
 			);
 			path = CapstoneTests;
+			sourceTree = "<group>";
+		};
+		9F84A3752489E932008111BC /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				9F84A3762489E975008111BC /* FeedCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -414,6 +425,7 @@
 				9F325C31248012E7003C39F4 /* UserModel.swift in Sources */,
 				9F84A3692480BC5F008111BC /* FeedViewController.swift in Sources */,
 				9F7DCDC1247DCA3800ABB84D /* SceneDelegate.swift in Sources */,
+				9F84A3772489E975008111BC /* FeedCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
