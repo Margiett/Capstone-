@@ -127,8 +127,28 @@ class DatabaseService {
     }
     
     public func fetchUserPost(userId: String, completion: @escaping (Result<[Post], Error>) -> ()) {
-        
+        db.collection(DatabaseService.postCollection).whereField(Constants.postId, isEqualTo: userId).getDocuments { (snapshot, error) in
+            if let error = error {
+                completion(.failure(error))
+            } else if let snapshot = snapshot {
+                let posts = snapshot.documents.map {Post ($0.data())}
+                completion(.success(posts.sorted(by: {$0.datePosted.seconds > $1.datePosted.seconds })))
+            }
+        }
+    }
+    
+    public func fetchFavorites(completion: @escaping (Result<[Favorite], Error>) -> ()) {
+        guard let user = Auth.auth().currentUser else { return }
+        db.collection(DatabaseService.userCollection).document(user.uid).collection(DatabaseService.favoriteCollection).getDocuments { (snapshot, error) in
+            if let error = error {
+                completion(.failure(error))
+            } else if let snapshot = snapshot {
+                let favorties = snapshot.documents.compactMap { Favorite($0.data())}
+                completion(.success(favorties.sorted(by: {$0.favoritedDate.seconds > $1.favoritedDate.seconds})))
+            }
+        }
     }
     
     
 }
+

@@ -13,9 +13,25 @@ import FirebaseFirestore
 class FeedViewController: UIViewController {
     
     @IBOutlet weak var feedCollectionView: UICollectionView!
+    @IBOutlet weak var faveButton: UIButton!
+    @IBOutlet weak var commentButton: UIButton!
+    
+    private var post: Post
     
     private var listener: ListenerRegistration?
     private let databaseService = DatabaseService()
+    
+    private var isFavorite = false {
+        didSet {
+            if isFavorite {
+                faveButton.imageView?.image = UIImage(systemName: "heart.fill")
+                
+            } else {
+                faveButton.imageView?.image = UIImage(systemName: "heart")
+            }
+            
+        }
+    }
     
     
     private var feed = [Post]() {
@@ -27,13 +43,13 @@ class FeedViewController: UIViewController {
         }
     }
     
-  
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         feedCollectionView.dataSource = self
         feedCollectionView.delegate = self
-       
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -56,14 +72,47 @@ class FeedViewController: UIViewController {
         listener?.remove()
     }
     
+    //MARK: this is favorting the post, the heart will be filled when is favorited and it will be empty when is not favorite
     @IBAction func favoriteButtonPressed(_ sender: UIButton) {
         if isFavorite {
-            databaseService.
-            
-            
+            DatabaseService.shared.removeFromFavorites(post: post) { [weak self] (result) in
+                switch result {
+                case .failure(let error):
+                    DispatchQueue.main.async {
+                        self?.showAlert(title: "Failed to remove favorite", message: error.localizedDescription)
+                    }
+                case .success:
+                    DispatchQueue.main.async {
+                        self?.showAlert(title: "Item removed", message: nil)
+                        self?.isFavorite = false
+                    }
+                }
+            }
+        } else {
+            DatabaseService.shared.addToFaves(post: post) { [weak self] (result) in
+                switch result {
+                case .failure(let error):
+                    DispatchQueue.main.async {
+                        self?.showAlert(title: "Favoriting error", message: error.localizedDescription)
+                    }
+                case .success:
+                    DispatchQueue.main.async {
+                        self?.showAlert(title: "item was favorited", message: "❤️")
+                        self?.isFavorite = true
+                    }
+                }
+            }
         }
+        
     }
+   
     
+    @IBAction func commentButtonPressed(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+        let commentVC = CommentVC()
+        navigationController?.pushViewController(commentVC, animated: true)
+       
+    }
     
     
     
@@ -79,7 +128,7 @@ class FeedViewController: UIViewController {
             }
         }
     }
-
+    
 }
 
 extension FeedViewController: UICollectionViewDataSource {

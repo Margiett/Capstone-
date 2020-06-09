@@ -182,6 +182,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WbX-gl-zXV">
                                                     <rect key="frame" x="8" y="312" width="72" height="30"/>
                                                     <state key="normal" title="comments"/>
+                                                    <connections>
+                                                        <action selector="commentButtonPressed:" destination="bQZ-bI-2bT" eventType="touchUpInside" id="vdf-zP-EQF"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -226,6 +229,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="commentButton" destination="WbX-gl-zXV" id="1nW-Nt-kYe"/>
+                        <outlet property="faveButton" destination="PI5-PK-1XJ" id="sih-nc-Sle"/>
                         <outlet property="feedCollectionView" destination="Afd-G8-Hp7" id="fsH-WU-RlS"/>
                     </connections>
                 </viewController>
