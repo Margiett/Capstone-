@@ -163,6 +163,9 @@
                                                     <rect key="frame" x="8" y="232" width="21" height="22"/>
                                                     <color key="tintColor" red="0.86417544469999996" green="0.093813231819999995" blue="0.073816770919999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <state key="normal" image="heart" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="favoriteButtonPressed:" destination="bQZ-bI-2bT" eventType="touchUpInside" id="Z0p-XJ-0pC"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caption " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Yn-0V-krx">
                                                     <rect key="frame" x="37" y="232" width="64" height="21"/>
@@ -204,7 +207,6 @@
                                             <outlet property="captionLabel" destination="1Yn-0V-krx" id="1hw-sA-lIv"/>
                                             <outlet property="commentButton" destination="WbX-gl-zXV" id="e7d-Ac-2fh"/>
                                             <outlet property="datePostLabel" destination="V44-uN-9yk" id="Q33-24-eeH"/>
-                                            <outlet property="favoriteButton" destination="PI5-PK-1XJ" id="bPs-80-jl8"/>
                                             <outlet property="postPicture" destination="3CE-al-gw7" id="ndw-Bz-Q4c"/>
                                             <outlet property="userProfilePic" destination="9FV-xf-dst" id="Ndd-YY-qcN"/>
                                             <outlet property="username" destination="BWs-bK-9Ij" id="r9h-86-qbS"/>
@@ -223,6 +225,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="feedCollectionView" destination="Afd-G8-Hp7" id="fsH-WU-RlS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b0v-dK-OT0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -351,16 +356,24 @@
                                     <constraint firstItem="yJQ-bq-agv" firstAttribute="top" secondItem="H0e-Vf-CBX" secondAttribute="top" id="xvh-bq-xKk"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rcu-oD-4EB">
+                                <rect key="frame" x="190" y="832" width="34" height="30"/>
+                                <state key="normal" title="Edit ">
+                                    <color key="titleColor" red="0.1035563573" green="0.76867061849999996" blue="0.75294524429999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="pxG-ee-RUu" firstAttribute="top" secondItem="THa-32-2gO" secondAttribute="bottom" constant="8" id="1Xz-fx-yYV"/>
                             <constraint firstItem="vvQ-rU-ltz" firstAttribute="leading" secondItem="fFD-Nf-lSh" secondAttribute="leading" constant="20" id="4Kv-AZ-RTp"/>
+                            <constraint firstItem="Rcu-oD-4EB" firstAttribute="leading" secondItem="fFD-Nf-lSh" secondAttribute="leading" constant="190" id="4qU-rX-8nE"/>
                             <constraint firstItem="fFD-Nf-lSh" firstAttribute="trailing" secondItem="H0e-Vf-CBX" secondAttribute="trailing" constant="8" id="8ru-IX-EII"/>
                             <constraint firstItem="0dx-Hr-9qp" firstAttribute="leading" secondItem="THa-32-2gO" secondAttribute="trailing" constant="75" id="9a1-YF-Eik"/>
                             <constraint firstItem="tnu-Ye-ZTN" firstAttribute="trailing" secondItem="fFD-Nf-lSh" secondAttribute="trailing" id="9zu-Z2-n2t"/>
                             <constraint firstItem="vvQ-rU-ltz" firstAttribute="top" secondItem="oyk-vz-W1n" secondAttribute="bottom" constant="20" id="ArP-P4-aql"/>
                             <constraint firstItem="tnu-Ye-ZTN" firstAttribute="leading" secondItem="fFD-Nf-lSh" secondAttribute="leading" id="DMp-aA-6sK"/>
+                            <constraint firstItem="Rcu-oD-4EB" firstAttribute="bottom" secondItem="fFD-Nf-lSh" secondAttribute="bottom" id="EoD-f0-Q18"/>
                             <constraint firstItem="NIG-LR-dDF" firstAttribute="top" secondItem="PEZ-tq-fPQ" secondAttribute="bottom" id="Hfj-VP-Iwg"/>
                             <constraint firstItem="PEZ-tq-fPQ" firstAttribute="leading" secondItem="fFD-Nf-lSh" secondAttribute="leading" constant="20" id="Q2K-EC-V1F"/>
                             <constraint firstItem="MHm-Yt-2Uh" firstAttribute="leading" secondItem="fFD-Nf-lSh" secondAttribute="leading" constant="20" id="Qhh-Fs-N93"/>
@@ -376,6 +389,7 @@
                             <constraint firstItem="fFD-Nf-lSh" firstAttribute="trailing" secondItem="g8u-k1-JAu" secondAttribute="trailing" constant="20" id="Zee-Rt-Xjy"/>
                             <constraint firstItem="g5T-Ed-mgP" firstAttribute="leading" secondItem="fFD-Nf-lSh" secondAttribute="leading" constant="20" id="a2F-gK-dmS"/>
                             <constraint firstItem="oyk-vz-W1n" firstAttribute="leading" secondItem="fFD-Nf-lSh" secondAttribute="leading" constant="20" id="ad3-Lv-nD3"/>
+                            <constraint firstItem="fFD-Nf-lSh" firstAttribute="trailing" secondItem="Rcu-oD-4EB" secondAttribute="trailing" constant="190" id="dTB-u4-HuM"/>
                             <constraint firstItem="MHm-Yt-2Uh" firstAttribute="top" secondItem="fFD-Nf-lSh" secondAttribute="top" id="dv5-oS-sTc"/>
                             <constraint firstItem="H0e-Vf-CBX" firstAttribute="top" secondItem="cYY-nz-XGQ" secondAttribute="bottom" constant="30" id="fjS-r9-XJg"/>
                             <constraint firstItem="0dx-Hr-9qp" firstAttribute="top" secondItem="PEZ-tq-fPQ" secondAttribute="bottom" id="gsk-sV-XMp"/>

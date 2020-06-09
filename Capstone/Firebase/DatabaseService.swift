@@ -50,6 +50,40 @@ class DatabaseService {
         }
     }
     
+    // deleting Post
+    public func delete(post: Post, completion: @escaping (Result<Bool, Error>) -> ()) {
+        db.collection(DatabaseService.postCollection).document(post.postID).delete { (error) in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(true))
+            }
+            
+            }
+    
+        
+    }
+    
+    public func postComment(post: Post, comment: String, completion: @escaping (Result<Bool, Error>) -> ()) {
+        guard let user = Auth.auth().currentUser, let displayName = user.displayName else {
+            print("missing user data")
+            return
+        }
+        
+        let docRef = db.collection(DatabaseService.postCollection).document(post.postID).collection(DatabaseService.commentCollection).document()
+        
+        db.collection(DatabaseService.commentCollection).document(docRef.documentID).setData(["text": comment, "commentDate": Timestamp(date: Date()), "postName": post.userName, "postID": post.postID, "commentedBy": displayName]) { (error) in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(true))
+            }
+            
+        }
+        
+    }
+    
+    
     // this is adding to favorites
     public func addToFaves(post: Post, completion: @escaping (Result<Bool, Error>) -> ()) {
         guard let user = Auth.auth().currentUser else { return }
@@ -90,6 +124,10 @@ class DatabaseService {
                 }
             }
         }
+    }
+    
+    public func fetchUserPost(userId: String, completion: @escaping (Result<[Post], Error>) -> ()) {
+        
     }
     
     

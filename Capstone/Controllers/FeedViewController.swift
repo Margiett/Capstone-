@@ -15,6 +15,8 @@ class FeedViewController: UIViewController {
     @IBOutlet weak var feedCollectionView: UICollectionView!
     
     private var listener: ListenerRegistration?
+    private let databaseService = DatabaseService()
+    
     
     private var feed = [Post]() {
         didSet {
@@ -53,6 +55,18 @@ class FeedViewController: UIViewController {
         super.viewWillDisappear(true)
         listener?.remove()
     }
+    
+    @IBAction func favoriteButtonPressed(_ sender: UIButton) {
+        if isFavorite {
+            databaseService.
+            
+            
+        }
+    }
+    
+    
+    
+    
     
     //MARK: the sign out button needs to be removed from here once, i have create the side meanue 
     @IBAction func signOutButtonPressed(_ sender: UIBarButtonItem) {
