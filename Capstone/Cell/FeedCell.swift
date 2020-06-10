@@ -16,10 +16,9 @@ class FeedCell: UICollectionViewCell {
     @IBOutlet weak var username: UILabel!
     
     @IBOutlet weak var postPicture: UIImageView!
-    @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var datePostLabel: UILabel!
-    @IBOutlet weak var commentButton: UIButton!
+
     
     public func confirgureCell(post: Post) {
         

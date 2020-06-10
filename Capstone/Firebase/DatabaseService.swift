@@ -20,7 +20,7 @@ class DatabaseService {
     private let db = Firestore.firestore()
     
      // private init() {}
-    static let shared = DatabaseService()
+    //static let shared = DatabaseService()
     
     
     //Creating the user(dog owner)

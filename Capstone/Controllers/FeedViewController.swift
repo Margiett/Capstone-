@@ -14,9 +14,9 @@ class FeedViewController: UIViewController {
     
     @IBOutlet weak var feedCollectionView: UICollectionView!
     @IBOutlet weak var faveButton: UIButton!
-    @IBOutlet weak var commentButton: UIButton!
+   
     
-    private var post: Post
+    private var post: Post!
     
     private var listener: ListenerRegistration?
     private let databaseService = DatabaseService()
@@ -43,13 +43,13 @@ class FeedViewController: UIViewController {
         }
     }
     
-    init?(coder: NSCoder, post: Post) {
-        self.post = post
-        super.init(coder: coder)
-    }
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+//    init?(coder: NSCoder, post: Post) {
+//        self.post = post
+//        super.init(coder: coder)
+//    }
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,7 +81,7 @@ class FeedViewController: UIViewController {
     //MARK: this is favorting the post, the heart will be filled when is favorited and it will be empty when is not favorite
     @IBAction func favoriteButtonPressed(_ sender: UIButton) {
         if isFavorite {
-            DatabaseService.shared.removeFromFavorites(post: post) { [weak self] (result) in
+            DatabaseService().removeFromFavorites(post: post) { [weak self] (result) in
                 switch result {
                 case .failure(let error):
                     DispatchQueue.main.async {
@@ -95,7 +95,7 @@ class FeedViewController: UIViewController {
                 }
             }
         } else {
-            DatabaseService.shared.addToFaves(post: post) { [weak self] (result) in
+            DatabaseService().addToFaves(post: post) { [weak self] (result) in
                 switch result {
                 case .failure(let error):
                     DispatchQueue.main.async {

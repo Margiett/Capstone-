@@ -24,18 +24,18 @@ class CommentVC: UIViewController {
         }
     }
     
-    init?(coder: NSCoder, post: Post) {
-        self.post = post
-        super.init(coder: coder)
-    }
+//    init?(coder: NSCoder, post: Post) {
+//        self.post = post
+//        super.init(coder: coder)
+//    }
+//
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     
-    
-    private var post: Post
+    private var post: Post!
     private var originalValueForConstraint: CGFloat = 0
     
     private lazy var tapGesture: UITapGestureRecognizer = {
@@ -96,7 +96,7 @@ class CommentVC: UIViewController {
     }
     
     private func postComment(text: String) {
-        DatabaseService.shared.postComment(post: post, comment: text) { [weak self] (result) in
+        DatabaseService().postComment(post: post, comment: text) { [weak self] (result) in
             switch result {
             case .failure(let error):
                 DispatchQueue.main.async {
