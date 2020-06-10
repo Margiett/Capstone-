@@ -254,7 +254,7 @@
                                                     <color key="tintColor" red="0.86417544469999996" green="0.093813231819999995" blue="0.073816770919999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <state key="normal" image="heart" catalog="system"/>
                                                     <connections>
-                                                        <action selector="favoriteButtonPressed:" destination="bQZ-bI-2bT" eventType="touchUpInside" id="Z0p-XJ-0pC"/>
+                                                        <action selector="favoriteButtonPressed:" destination="bQZ-bI-2bT" eventType="touchUpInside" id="A5c-FK-Ucg"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caption " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Yn-0V-krx">
@@ -275,7 +275,7 @@
                                                         <color key="titleColor" red="0.1035563573" green="0.76867061849999996" blue="0.75294524429999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="commentButtonPressed:" destination="bQZ-bI-2bT" eventType="touchUpInside" id="vdf-zP-EQF"/>
+                                                        <action selector="commentButtonPressed:" destination="bQZ-bI-2bT" eventType="touchUpInside" id="4Hb-JJ-BZ9"/>
                                                         <segue destination="Cax-LH-Cfm" kind="popoverPresentation" popoverAnchorView="WbX-gl-zXV" id="tcv-15-1qD">
                                                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                                         </segue>
@@ -303,7 +303,6 @@
                                         <size key="customSize" width="308" height="350"/>
                                         <connections>
                                             <outlet property="captionLabel" destination="1Yn-0V-krx" id="1hw-sA-lIv"/>
-                                            <outlet property="commentButton" destination="WbX-gl-zXV" id="e7d-Ac-2fh"/>
                                             <outlet property="datePostLabel" destination="V44-uN-9yk" id="Q33-24-eeH"/>
                                             <outlet property="postPicture" destination="3CE-al-gw7" id="ndw-Bz-Q4c"/>
                                             <outlet property="userProfilePic" destination="9FV-xf-dst" id="Ndd-YY-qcN"/>
@@ -324,8 +323,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="commentButton" destination="WbX-gl-zXV" id="1nW-Nt-kYe"/>
-                        <outlet property="faveButton" destination="PI5-PK-1XJ" id="sih-nc-Sle"/>
+                        <outlet property="commentButton" destination="WbX-gl-zXV" id="aZm-hx-XwW"/>
+                        <outlet property="faveButton" destination="PI5-PK-1XJ" id="E9Q-g5-ran"/>
                         <outlet property="feedCollectionView" destination="Afd-G8-Hp7" id="fsH-WU-RlS"/>
                     </connections>
                 </viewController>
