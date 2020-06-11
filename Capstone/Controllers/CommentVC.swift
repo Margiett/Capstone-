@@ -46,12 +46,12 @@ class CommentVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        originalValueForConstraint = containerBottomConstraint.constant
+        //originalValueForConstraint = containerBottomConstraint.constant
         tableView.dataSource = self
         
         commentTextField.delegate = self
         view.addGestureRecognizer(tapGesture)
-        navigationItem.title = post.userName
+       // navigationItem.title = post.userName
         navigationItem.largeTitleDisplayMode = .never
 
     }

@@ -13,7 +13,7 @@ import FirebaseFirestore
 class FeedViewController: UIViewController {
     
     @IBOutlet weak var feedCollectionView: UICollectionView!
-    @IBOutlet weak var faveButton: UIButton!
+
    
     
     private var post: Post!
@@ -21,17 +21,7 @@ class FeedViewController: UIViewController {
     private var listener: ListenerRegistration?
     private let databaseService = DatabaseService()
     
-    private var isFavorite = false {
-        didSet {
-            if isFavorite {
-                faveButton.imageView?.image = UIImage(systemName: "heart.fill")
-                
-            } else {
-                faveButton.imageView?.image = UIImage(systemName: "heart")
-            }
-            
-        }
-    }
+   
     
     
     private var feed = [Post]() {
@@ -43,13 +33,7 @@ class FeedViewController: UIViewController {
         }
     }
     
-//    init?(coder: NSCoder, post: Post) {
-//        self.post = post
-//        super.init(coder: coder)
-//    }
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,47 +62,16 @@ class FeedViewController: UIViewController {
         listener?.remove()
     }
     
-    //MARK: this is favorting the post, the heart will be filled when is favorited and it will be empty when is not favorite
-    @IBAction func favoriteButtonPressed(_ sender: UIButton) {
-        if isFavorite {
-            DatabaseService().removeFromFavorites(post: post) { [weak self] (result) in
-                switch result {
-                case .failure(let error):
-                    DispatchQueue.main.async {
-                        self?.showAlert(title: "Failed to remove favorite", message: error.localizedDescription)
-                    }
-                case .success:
-                    DispatchQueue.main.async {
-                        self?.showAlert(title: "Item removed", message: nil)
-                        self?.isFavorite = false
-                    }
-                }
-            }
-        } else {
-            DatabaseService().addToFaves(post: post) { [weak self] (result) in
-                switch result {
-                case .failure(let error):
-                    DispatchQueue.main.async {
-                        self?.showAlert(title: "Favoriting error", message: error.localizedDescription)
-                    }
-                case .success:
-                    DispatchQueue.main.async {
-                        self?.showAlert(title: "item was favorited", message: "❤️")
-                        self?.isFavorite = true
-                    }
-                }
-            }
-        }
-        
-    }
+    
+    
    
     
-    @IBAction func commentButtonPressed(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
-        let commentVC = CommentVC()
-        navigationController?.pushViewController(commentVC, animated: true)
-       
-    }
+//    @IBAction func commentButtonPressed(_ sender: UIButton) {
+//        dismiss(animated: true, completion: nil)
+//        let commentVC = CommentVC()
+//        navigationController?.pushViewController(commentVC, animated: true)
+//       
+//    }
     
     
     
@@ -139,7 +92,7 @@ class FeedViewController: UIViewController {
 
 extension FeedViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return feed.count
+        return 4
     }
     
     
@@ -147,8 +100,8 @@ extension FeedViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "feedCell", for: indexPath) as? FeedCell else {
             fatalError("could not downcast to feedCell")
         }
-        let post = feed[indexPath.row]
-        cell.confirgureCell(post: post)
+        //let post = feed[indexPath.row]
+       // cell.confirgureCell(post: post)
         return cell
     }
 }
@@ -156,7 +109,7 @@ extension FeedViewController: UICollectionViewDataSource {
 extension FeedViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let maxSize = UIScreen.main.bounds
-        return CGSize(width: maxSize.width, height: maxSize.height * 0.70)
+        return CGSize(width: maxSize.width, height: 200)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)

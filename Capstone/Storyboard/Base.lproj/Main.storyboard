@@ -33,7 +33,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XcA-4T-84Y">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="718"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="669"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="jbp-Uy-XX2" detailTextLabel="deX-YH-HiB" rowHeight="119" style="IBUITableViewCellStyleSubtitle" id="XzO-4x-nDS">
@@ -71,12 +71,12 @@
                                 </constraints>
                             </containerView>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0yJ-VD-bjr">
-                                <rect key="frame" x="20" y="784" width="281" height="34"/>
+                                <rect key="frame" x="20" y="735" width="281" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZs-i7-DHN">
-                                <rect key="frame" x="342" y="786" width="34" height="30"/>
+                                <rect key="frame" x="342" y="737" width="34" height="30"/>
                                 <state key="normal" title="send">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -104,6 +104,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gZK-zJ-FVC"/>
                     </view>
+                    <navigationItem key="navigationItem" id="JTv-F8-UkN"/>
                     <connections>
                         <outlet property="commentTextField" destination="0yJ-VD-bjr" id="fY9-bG-URn"/>
                         <outlet property="containerBottomConstraint" destination="Vt5-ly-rFy" id="PQ7-Id-G1I"/>
@@ -212,7 +213,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Afd-G8-Hp7">
-                                <rect key="frame" x="0.0" y="206" width="414" height="368"/>
+                                <rect key="frame" x="0.0" y="206" width="414" height="607"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ieU-xH-lFR">
@@ -253,9 +254,6 @@
                                                     <rect key="frame" x="8" y="232" width="21" height="22"/>
                                                     <color key="tintColor" red="0.86417544469999996" green="0.093813231819999995" blue="0.073816770919999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <state key="normal" image="heart" catalog="system"/>
-                                                    <connections>
-                                                        <action selector="favoriteButtonPressed:" destination="bQZ-bI-2bT" eventType="touchUpInside" id="FSq-vz-Bhr"/>
-                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caption " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Yn-0V-krx">
                                                     <rect key="frame" x="37" y="232" width="64" height="21"/>
@@ -275,7 +273,7 @@
                                                         <color key="titleColor" red="0.1035563573" green="0.76867061849999996" blue="0.75294524429999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="commentButtonPressed:" destination="bQZ-bI-2bT" eventType="touchUpInside" id="eGz-Z0-DL4"/>
+                                                        <segue destination="Cax-LH-Cfm" kind="show" id="ind-xJ-dQ6"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -320,7 +318,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="faveButton" destination="PI5-PK-1XJ" id="EAN-BO-8PB"/>
                         <outlet property="feedCollectionView" destination="Afd-G8-Hp7" id="fsH-WU-RlS"/>
                     </connections>
                 </viewController>
