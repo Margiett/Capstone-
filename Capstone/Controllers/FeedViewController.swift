@@ -40,6 +40,7 @@ class FeedViewController: UIViewController {
         feedCollectionView.dataSource = self
         feedCollectionView.delegate = self
         
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -66,12 +67,7 @@ class FeedViewController: UIViewController {
     
    
     
-//    @IBAction func commentButtonPressed(_ sender: UIButton) {
-//        dismiss(animated: true, completion: nil)
-//        let commentVC = CommentVC()
-//        navigationController?.pushViewController(commentVC, animated: true)
-//       
-//    }
+
     
     
     
@@ -92,7 +88,7 @@ class FeedViewController: UIViewController {
 
 extension FeedViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return feed.count
     }
     
     
@@ -100,8 +96,8 @@ extension FeedViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "feedCell", for: indexPath) as? FeedCell else {
             fatalError("could not downcast to feedCell")
         }
-        //let post = feed[indexPath.row]
-       // cell.confirgureCell(post: post)
+        let post = feed[indexPath.row]
+        cell.confirgureCell(post: post)
         return cell
     }
 }
@@ -109,7 +105,7 @@ extension FeedViewController: UICollectionViewDataSource {
 extension FeedViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let maxSize = UIScreen.main.bounds
-        return CGSize(width: maxSize.width, height: 200)
+        return CGSize(width: maxSize.width, height: maxSize.height * 0.80)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)

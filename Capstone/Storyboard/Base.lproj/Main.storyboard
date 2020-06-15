@@ -325,10 +325,10 @@
             </objects>
             <point key="canvasLocation" x="-127.53623188405798" y="-54.241071428571423"/>
         </scene>
-        <!--View Controller-->
+        <!--ProfileVC-->
         <scene sceneID="PZE-xS-ghQ">
             <objects>
-                <viewController id="RGm-Yv-GKN" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileVC" id="RGm-Yv-GKN" customClass="ProfileVC" customModule="Capstone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WGZ-yd-1Cy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -496,6 +496,20 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fFD-Nf-lSh"/>
                     </view>
+                    <connections>
+                        <outlet property="aboutMeLabel" destination="cYY-nz-XGQ" id="HWo-DE-xeP"/>
+                        <outlet property="detailLabel" destination="g5T-Ed-mgP" id="HUa-gr-fmd"/>
+                        <outlet property="editProfile" destination="Rcu-oD-4EB" id="UeZ-nO-ksI"/>
+                        <outlet property="firstMainPic" destination="yJQ-bq-agv" id="Ljn-lj-Q4e"/>
+                        <outlet property="followersLabel" destination="g8u-k1-JAu" id="IMw-SA-wYj"/>
+                        <outlet property="friendRequestButton" destination="0dx-Hr-9qp" id="XmQ-eu-dSL"/>
+                        <outlet property="mainProfilePic" destination="tnu-Ye-ZTN" id="HTZ-ZY-gXb"/>
+                        <outlet property="playDateButton" destination="THa-32-2gO" id="I00-NB-L4Z"/>
+                        <outlet property="secondDetailLabel" destination="PEZ-tq-fPQ" id="NTR-UU-nwn"/>
+                        <outlet property="secondMainPic" destination="e5y-PK-2Vg" id="u3Z-pV-k5R"/>
+                        <outlet property="statusLabel" destination="MHm-Yt-2Uh" id="vio-nH-v9d"/>
+                        <outlet property="thirdMainPic" destination="kto-6k-Jm7" id="Xa0-Hc-Owx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D3p-fT-U40" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
