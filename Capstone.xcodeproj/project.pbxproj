@@ -34,6 +34,7 @@
 		9F84A3772489E975008111BC /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F84A3762489E975008111BC /* FeedCell.swift */; };
 		9F84A37924901676008111BC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F84A37824901676008111BC /* Constants.swift */; };
 		9F84A37C24904F2A008111BC /* CommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F84A37B24904F2A008111BC /* CommentVC.swift */; };
+		9FD30CFB24981A0D00F0733A /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD30CFA24981A0D00F0733A /* UIImage+Extension.swift */; };
 		9FFE1E852491572F00C9D2D6 /* Alert extension cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFE1E842491572F00C9D2D6 /* Alert extension cell.swift */; };
 		9FFE1E892492A43900C9D2D6 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFE1E882492A43900C9D2D6 /* ProfileVC.swift */; };
 		A537F9A18CDB0DBF09965AD6 /* Pods_Capstone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0596883DA6CE675EE7CB7D7E /* Pods_Capstone.framework */; };
@@ -86,6 +87,7 @@
 		9F84A3762489E975008111BC /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		9F84A37824901676008111BC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9F84A37B24904F2A008111BC /* CommentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentVC.swift; sourceTree = "<group>"; };
+		9FD30CFA24981A0D00F0733A /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		9FFE1E842491572F00C9D2D6 /* Alert extension cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert extension cell.swift"; sourceTree = "<group>"; };
 		9FFE1E882492A43900C9D2D6 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -168,6 +170,7 @@
 				9F325C3624801D13003C39F4 /* UIViewController + Alerts.swift */,
 				9F325C3E24802A69003C39F4 /* UIViewControllerExtensions.swift */,
 				9F84A36C2486C6DB008111BC /* Date+Extensions.swift */,
+				9FD30CFA24981A0D00F0733A /* UIImage+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 				9F84A37C24904F2A008111BC /* CommentVC.swift in Sources */,
 				9F325C2F24801034003C39F4 /* DatabaseService.swift in Sources */,
 				9F84A36B2486B444008111BC /* CommentModel.swift in Sources */,
+				9FD30CFB24981A0D00F0733A /* UIImage+Extension.swift in Sources */,
 				9F325C4124802B89003C39F4 /* SignUpViewController.swift in Sources */,
 				9FFE1E852491572F00C9D2D6 /* Alert extension cell.swift in Sources */,
 				9F7DCDBF247DCA3800ABB84D /* AppDelegate.swift in Sources */,

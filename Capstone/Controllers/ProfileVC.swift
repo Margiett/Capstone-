@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseStorage
+import Kingfisher
 
 // need to figure out, and one side of the segmented controll can be a collectionviw and the other side a regular view
 enum ViewState {
@@ -58,7 +61,23 @@ class ProfileVC: UIViewController {
             mainProfilePic.image = selectedImage
         }
     }
+    private var selectedImageFirst: UIImage? {
+        didSet {
+            firstMainPic.image = selectedImageFirst
+        }
+    }
     
+    private var selectedImageTwo: UIImage? {
+        didSet {
+            firstMainPic.image = selectedImageTwo
+        }
+    }
+    
+    private var selectedImageThree: UIImage? {
+        didSet {
+            secondMainPic.image = selectedImageThree
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -106,9 +125,29 @@ class ProfileVC: UIViewController {
         editState = 0
         guard let detail = editDetailNameTextField.text, !detail.isEmpty else { return }
         
-        guard let detailLocation = editLocationTextField.text, !detailLocation.isEmpty else { return }
+        guard let detailLocation = editLocationTextField.text, !detailLocation.isEmpty,
+            let selectedImageOne = selectedImageFirst,
+            let selectedImageTwo = selectedImageTwo,
+            let selectedImageThird = selectedImageThree else { return }
         
-        guard let aboutME = editAboutMeTextField.text, !aboutME.isEmpty else { return }
+        guard let aboutME = editAboutMeTextField.text, !aboutME.isEmpty, let selectedImage = selectedImage else { return }
+        
+        guard let user = Auth.auth().currentUser else { return }
+        
+        let resizedImage = UIImage.resizeImage(originalImage: selectedImage, rect: mainProfilePic.bounds)
+        
+        StorageService.shared.uploadPhoto(userId: user.uid, image: resizedImage) { [weak self] (result) in
+            switch result {
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self?.showAlert(title: "Error uploading photo", message: "\(error.localizedDescription)")
+                }
+            case .success(let url):
+                self?.updateUser(displayName: displayName, photo: url.absoluteString)
+            }
+        }
+        
+        
         
         
      
