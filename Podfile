@@ -11,6 +11,7 @@ target 'Capstone' do
     pod 'FirebaseAuth'
     pod 'Firebase/Storage'
     pod 'Kingfisher'
+    pod 'FirebaseFirestoreSwift'
 
   target 'CapstoneTests' do
     inherit! :search_paths

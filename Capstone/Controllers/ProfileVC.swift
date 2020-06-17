@@ -143,7 +143,7 @@ class ProfileVC: UIViewController {
                     self?.showAlert(title: "Error uploading photo", message: "\(error.localizedDescription)")
                 }
             case .success(let url):
-                
+                break
                 
             }
         }
