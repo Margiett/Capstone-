@@ -143,15 +143,30 @@ class ProfileVC: UIViewController {
                     self?.showAlert(title: "Error uploading photo", message: "\(error.localizedDescription)")
                 }
             case .success(let url):
-                self?.updateUser(displayName: displayName, photo: url.absoluteString)
+                
             }
         }
-        
-        
-        
-        
      
         }
+    
+    @IBAction func cancelButtonPressed(_ sender: UIButton) {
+        editState = 0
+        editProfile.isHidden = false
+        cancelButton.isHidden = true
+        saveButton.isHidden = true
+        
+        editDetailNameTextField.isHidden = true
+        editLocationTextField.isHidden = true
+        editAboutMeTextField.isHidden = true
+        
+        detailLabel.alpha = 1.0
+        secondDetailLabel.alpha = 1.0
+        aboutMeLabel.alpha = 1.0
+    }
+    
+    
+    
+    
     }
  
 

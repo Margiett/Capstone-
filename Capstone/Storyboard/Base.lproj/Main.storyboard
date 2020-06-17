@@ -333,8 +333,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tnu-Ye-ZTN">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="305"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="tnu-Ye-ZTN">
+                                <rect key="frame" x="0.0" y="1" width="414" height="302.5"/>
+                                <color key="tintColor" red="0.1035563573" green="0.76867061849999996" blue="0.75294524429999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="414" id="Rai-Ei-sGX"/>
                                     <constraint firstAttribute="height" constant="305" id="zdP-ow-st8"/>
@@ -410,6 +411,7 @@
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="yJQ-bq-agv">
                                         <rect key="frame" x="0.0" y="1" width="122" height="85.5"/>
+                                        <color key="tintColor" red="0.1035563573" green="0.76867061849999996" blue="0.75294524429999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="122" id="C3U-Gd-g1B"/>
                                             <constraint firstAttribute="height" constant="88" id="Nfs-26-u5G"/>
@@ -419,6 +421,7 @@
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="e5y-PK-2Vg">
                                         <rect key="frame" x="122" y="1" width="122" height="85.5"/>
+                                        <color key="tintColor" red="0.1035563573" green="0.76867061849999996" blue="0.75294524429999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="88" id="2yy-Mz-irw"/>
                                             <constraint firstAttribute="height" constant="88" id="FYZ-BX-o2h"/>
@@ -428,6 +431,7 @@
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="kto-6k-Jm7">
                                         <rect key="frame" x="244" y="1" width="154" height="85.5"/>
+                                        <color key="tintColor" red="0.1035563573" green="0.76867061849999996" blue="0.75294524429999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="88" id="May-fQ-IbP"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="122" id="kG9-Rb-Slx"/>
@@ -453,6 +457,9 @@
                                 <state key="normal" title="Edit ">
                                     <color key="titleColor" red="0.1035563573" green="0.76867061849999996" blue="0.75294524429999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="editProfilButtonPressed:" destination="RGm-Yv-GKN" eventType="touchUpInside" id="2dT-YU-Rf5"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter name, age and breed of dog" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d1i-SA-lSh">
                                 <rect key="frame" x="20" y="392" width="374" height="34"/>
@@ -475,6 +482,9 @@
                                 <state key="normal" title="Save">
                                     <color key="titleColor" red="0.1035563573" green="0.76867061849999996" blue="0.75294524429999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="savedButtonPressed:" destination="RGm-Yv-GKN" eventType="touchUpInside" id="ehw-aZ-a2f"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oq3-w3-ClA">
                                 <rect key="frame" x="347" y="832" width="48" height="30"/>
@@ -483,19 +493,11 @@
                                     <color key="titleColor" red="0.1035563573" green="0.76867061849999996" blue="0.75294524429999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xiy-ky-I7Q">
-                                <rect key="frame" x="364" y="273" width="18" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.1035563573" green="0.76867061849999996" blue="0.75294524429999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" image="pencil">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqR-ej-4At">
                                 <rect key="frame" x="50" y="723" width="20" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.1035563573" green="0.76867061849999996" blue="0.75294524429999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" image="pencil.circle.fill" catalog="system">
+                                <state key="normal" image="plus.circle" catalog="system">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
@@ -503,7 +505,7 @@
                                 <rect key="frame" x="327" y="723" width="20" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.1035563573" green="0.76867061849999996" blue="0.75294524429999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" image="pencil.circle.fill" catalog="system">
+                                <state key="normal" image="plus.circle" catalog="system">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
@@ -511,7 +513,15 @@
                                 <rect key="frame" x="185" y="723" width="20" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.1035563573" green="0.76867061849999996" blue="0.75294524429999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" image="pencil.circle.fill" catalog="system">
+                                <state key="normal" image="plus.circle" catalog="system">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xiy-ky-I7Q">
+                                <rect key="frame" x="374" y="275" width="20" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.1035563573" green="0.76867061849999996" blue="0.75294524429999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" image="plus.circle" catalog="system">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
@@ -568,17 +578,26 @@
                     </view>
                     <connections>
                         <outlet property="aboutMeLabel" destination="cYY-nz-XGQ" id="HWo-DE-xeP"/>
+                        <outlet property="cancelButton" destination="Oq3-w3-ClA" id="zc9-E8-C4p"/>
                         <outlet property="detailLabel" destination="g5T-Ed-mgP" id="HUa-gr-fmd"/>
+                        <outlet property="editAboutMeTextField" destination="DR4-Ul-KyY" id="2I7-HZ-0G3"/>
+                        <outlet property="editDetailNameTextField" destination="d1i-SA-lSh" id="0K6-QG-6b8"/>
+                        <outlet property="editLocationTextField" destination="RGO-U0-Hp9" id="8cM-VJ-FEy"/>
                         <outlet property="editProfile" destination="Rcu-oD-4EB" id="UeZ-nO-ksI"/>
                         <outlet property="firstMainPic" destination="yJQ-bq-agv" id="Ljn-lj-Q4e"/>
+                        <outlet property="firstPicEditbutton" destination="aqR-ej-4At" id="TpC-6C-7Pd"/>
                         <outlet property="followersLabel" destination="g8u-k1-JAu" id="IMw-SA-wYj"/>
                         <outlet property="friendRequestButton" destination="0dx-Hr-9qp" id="XmQ-eu-dSL"/>
                         <outlet property="mainProfilePic" destination="tnu-Ye-ZTN" id="HTZ-ZY-gXb"/>
+                        <outlet property="mainProfilePicEdit" destination="Xiy-ky-I7Q" id="FnX-Lq-WSx"/>
                         <outlet property="playDateButton" destination="THa-32-2gO" id="I00-NB-L4Z"/>
+                        <outlet property="saveButton" destination="obW-t9-3ga" id="Mgy-FK-aRs"/>
                         <outlet property="secondDetailLabel" destination="PEZ-tq-fPQ" id="NTR-UU-nwn"/>
                         <outlet property="secondMainPic" destination="e5y-PK-2Vg" id="u3Z-pV-k5R"/>
+                        <outlet property="secondPicEditButton" destination="yaD-aT-Lcw" id="2OH-cO-KCt"/>
                         <outlet property="statusLabel" destination="MHm-Yt-2Uh" id="vio-nH-v9d"/>
                         <outlet property="thirdMainPic" destination="kto-6k-Jm7" id="Xa0-Hc-Owx"/>
+                        <outlet property="thirdPicEditButton" destination="Gl8-WS-kRb" id="aR4-d8-OiX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D3p-fT-U40" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -650,11 +669,10 @@
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="line.horizontal.3" catalog="system" width="128" height="64"/>
         <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
-        <image name="pencil" width="128" height="113"/>
-        <image name="pencil.circle.fill" catalog="system" width="128" height="121"/>
         <image name="person.3.fill" catalog="system" width="128" height="61"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="person.crop.circle.badge.plus" catalog="system" width="128" height="101"/>
         <image name="photo" catalog="system" width="128" height="93"/>
+        <image name="plus.circle" catalog="system" width="128" height="121"/>
     </resources>
 </document>
