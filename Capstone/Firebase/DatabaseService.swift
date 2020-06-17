@@ -132,7 +132,8 @@ class DatabaseService {
                 completion(.failure(error))
             } else if let snapshot = snapshot {
                 let posts = snapshot.documents.map {Post ($0.data())}
-                completion(.success(posts.sorted(by: {$0.datePosted.seconds > $1.datePosted.seconds })))
+                completion(.success(posts))
+               // completion(.success(posts.sorted(by: {$0.datePosted.seconds > $1.datePosted.seconds })))
             }
         }
     }
@@ -144,7 +145,8 @@ class DatabaseService {
                 completion(.failure(error))
             } else if let snapshot = snapshot {
                 let favorties = snapshot.documents.compactMap { Favorite($0.data())}
-                completion(.success(favorties.sorted(by: {$0.favoritedDate.seconds > $1.favoritedDate.seconds})))
+                completion(.success(favorties))
+                //completion(.success(favorties.sorted(by: {$0.favoritedDate.seconds > $1.favoritedDate.seconds})))
             }
         }
     }

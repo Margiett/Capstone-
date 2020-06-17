@@ -49,7 +49,7 @@ class FeedCell: UICollectionViewCell {
             userProfilePic.image = UIImage(systemName: "person.fill")
             userProfilePic.image?.withTintColor(#colorLiteral(red: 0, green: 0.7827044129, blue: 0.7580528855, alpha: 1))
             captionLabel.text = post.caption
-            datePostLabel.text = post.datePosted.description
+           // datePostLabel.text = post.datePosted.description
             userProfilePic.kf.setImage(with: URL(string: post.imageURL))
             
             

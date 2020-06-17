@@ -37,12 +37,12 @@ class CommentVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //originalValueForConstraint = containerBottomConstraint.constant
+       originalValueForConstraint = containerBottomConstraint.constant
         tableView.dataSource = self
         
         commentTextField.delegate = self
         view.addGestureRecognizer(tapGesture)
-       // navigationItem.title = post.userName
+       navigationItem.title = post.userName
         navigationItem.largeTitleDisplayMode = .never
 
     }
@@ -111,9 +111,9 @@ extension CommentVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "commentCell", for: indexPath)
         let comment = comments[indexPath.row]
-        let dataString = comment.commentDate.dateValue().dateString()
+        //let dataString = comment.commentDate.dateValue().dateString()
         cell.textLabel?.text = comment.text
-        cell.detailTextLabel?.text = "@" + comment.commentedBy + " " + dataString
+        //cell.detailTextLabel?.text = "@" + comment.commentedBy + " " + dataString
         return cell
     }
 }
