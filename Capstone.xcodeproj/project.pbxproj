@@ -24,7 +24,6 @@
 		9F7DCDCB247DCA3A00ABB84D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F7DCDCA247DCA3A00ABB84D /* Assets.xcassets */; };
 		9F7DCDCE247DCA3A00ABB84D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F7DCDCC247DCA3A00ABB84D /* LaunchScreen.storyboard */; };
 		9F7DCDD9247DCA3A00ABB84D /* CapstoneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7DCDD8247DCA3A00ABB84D /* CapstoneTests.swift */; };
-		9F7DCDE4247F7EAD00ABB84D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F7DCDE3247F7EAD00ABB84D /* GoogleService-Info.plist */; };
 		9F84A3692480BC5F008111BC /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F84A3682480BC5F008111BC /* FeedViewController.swift */; };
 		9F84A36B2486B444008111BC /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F84A36A2486B444008111BC /* CommentModel.swift */; };
 		9F84A36D2486C6DB008111BC /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F84A36C2486C6DB008111BC /* Date+Extensions.swift */; };
@@ -34,6 +33,7 @@
 		9F84A3772489E975008111BC /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F84A3762489E975008111BC /* FeedCell.swift */; };
 		9F84A37924901676008111BC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F84A37824901676008111BC /* Constants.swift */; };
 		9F84A37C24904F2A008111BC /* CommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F84A37B24904F2A008111BC /* CommentVC.swift */; };
+		9FB984B7249AE420006B1D0D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FB984B6249AE420006B1D0D /* GoogleService-Info.plist */; };
 		9FD30CFB24981A0D00F0733A /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD30CFA24981A0D00F0733A /* UIImage+Extension.swift */; };
 		9FFE1E852491572F00C9D2D6 /* Alert extension cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFE1E842491572F00C9D2D6 /* Alert extension cell.swift */; };
 		9FFE1E892492A43900C9D2D6 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFE1E882492A43900C9D2D6 /* ProfileVC.swift */; };
@@ -77,7 +77,6 @@
 		9F7DCDD4247DCA3A00ABB84D /* CapstoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CapstoneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F7DCDD8247DCA3A00ABB84D /* CapstoneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapstoneTests.swift; sourceTree = "<group>"; };
 		9F7DCDDA247DCA3A00ABB84D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9F7DCDE3247F7EAD00ABB84D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9F84A3682480BC5F008111BC /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		9F84A36A2486B444008111BC /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
 		9F84A36C2486C6DB008111BC /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
@@ -87,6 +86,7 @@
 		9F84A3762489E975008111BC /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		9F84A37824901676008111BC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9F84A37B24904F2A008111BC /* CommentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentVC.swift; sourceTree = "<group>"; };
+		9FB984B6249AE420006B1D0D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Storyboard/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9FD30CFA24981A0D00F0733A /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		9FFE1E842491572F00C9D2D6 /* Alert extension cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert extension cell.swift"; sourceTree = "<group>"; };
 		9FFE1E882492A43900C9D2D6 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
@@ -229,7 +229,7 @@
 				9F7DCDC0247DCA3800ABB84D /* SceneDelegate.swift */,
 				9F7DCDCA247DCA3A00ABB84D /* Assets.xcassets */,
 				9F7DCDCF247DCA3A00ABB84D /* Info.plist */,
-				9F7DCDE3247F7EAD00ABB84D /* GoogleService-Info.plist */,
+				9FB984B6249AE420006B1D0D /* GoogleService-Info.plist */,
 				9F7DCDC7247DCA3800ABB84D /* Capstone.xcdatamodeld */,
 			);
 			path = Capstone;
@@ -338,8 +338,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F7DCDCE247DCA3A00ABB84D /* LaunchScreen.storyboard in Resources */,
-				9F7DCDE4247F7EAD00ABB84D /* GoogleService-Info.plist in Resources */,
 				9F7DCDCB247DCA3A00ABB84D /* Assets.xcassets in Resources */,
+				9FB984B7249AE420006B1D0D /* GoogleService-Info.plist in Resources */,
 				9F325C2C247F893F003C39F4 /* Login.storyboard in Resources */,
 				9F7DCDC6247DCA3800ABB84D /* Main.storyboard in Resources */,
 			);

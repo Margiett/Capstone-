@@ -11,7 +11,7 @@ import Firebase
 
 struct Post {
     let imageURL: String
-    let datePosted: Timestamp
+    let datePosted: Date
     let caption: String
     let userName: String
     let userId: String
@@ -22,7 +22,7 @@ struct Post {
 extension Post {
     init(_ dictionary: [String: Any]) {
         self.imageURL = dictionary["imageURL"] as? String ?? "no image"
-        self.datePosted = dictionary["datePosted"] as? Timestamp ?? Timestamp(date: Date())
+        self.datePosted = dictionary["datePosted"] as? Date ?? Date()
         self.caption = dictionary["caption"] as? String ?? "no caption"
         self.userName = dictionary["userName"] as? String ?? "no user name"
         self.userId = dictionary["userId"] as? String ?? "no user ID"

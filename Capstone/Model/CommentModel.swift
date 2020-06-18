@@ -10,7 +10,7 @@ import Foundation
 import Firebase
 
 struct Comment {
-    let commentDate: Timestamp
+    let commentDate: Date
     let commentedBy: String
     let postId: String
     let postName: String
@@ -20,7 +20,7 @@ struct Comment {
 
 extension Comment {
     init(_ dictionary: [String: Any]) {
-       self.commentDate = dictionary["commentDate"] as? Timestamp ?? Timestamp(date: Date())
+       self.commentDate = dictionary["commentDate"] as? Date ?? Date()
         self.commentedBy = dictionary["commentedBy"] as? String ?? "N/A"
         self.postId = dictionary["itemId"] as? String ?? "N/A"
         self.postName = dictionary["itemName"] as? String ?? "N/A"
