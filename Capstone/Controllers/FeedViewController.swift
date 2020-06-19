@@ -14,22 +14,16 @@ import AVFoundation
 class FeedViewController: UIViewController {
     
     @IBOutlet weak var feedCollectionView: UICollectionView!
-
-   
+    @IBOutlet weak var postButton:UIButton!
+    
+    override func viewWillLayoutSubviews() {
+        postButton.layer.cornerRadius = 5.0
+    }
     
     private var post: Post!
     
     private var listener: ListenerRegistration?
     private let databaseService = DatabaseService()
-    
-   private let imagePickerController = UIImagePickerController()
-    
-    private var selectedImage: UIImage? {
-        didSet {
-            appendNewPhotoToCollection()
-        }
-    }
-    
     
     private var feed = [Post]() {
         didSet {
@@ -69,61 +63,6 @@ class FeedViewController: UIViewController {
         super.viewWillDisappear(true)
         listener?.remove()
     }
-    
-    
-    private func appendNewPhotoToCollection() {
-        guard let image = selectedImage else {
-            print("image is nil")
-            return
-            
-        }
-        print("original image size is \(image.size)")
-        // the size for resizing of the image
-        let size = UIScreen.main.bounds.size
-        
-        // this is maininting the aspect ratio of the image
-        let rect = AVMakeRect(aspectRatio: image.size, insideRect: CGRect(origin: CGPoint.zero, size: size))
-        
-        // resize image
-        let resizeImage = image.resizeImage(to: rect.size.width, height: rect.size.height)
-        
-        print("resized image size is \(resizeImage.size)")
-        
-        guard let resizedImageData = resizeImage.jpegData(compressionQuality: 1.0) else {
-            return
-        } // creating an image object using the image selected
-        let creatingImageUsingSelected = Post(imageURL: "resizedImageData", datePosted: Date(), caption: "caption", userName: "userName", userId: "userId", postID: "postID")
-    }
-    private func showImageController(isCameraSelected: Bool) {
-        imagePickerController.sourceType = .photoLibrary
-        if isCameraSelected {
-            imagePickerController.sourceType = .camera
-        }
-        present(imagePickerController, animated: true)
-    }
-    
-    @IBAction func postPictureButtonPressed(_ sender: UIButton) {
-        
-        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        let cameraAction = UIAlertAction(title: "Camera", style: .default) { [weak self] alertAction in
-            self?.showImageController(isCameraSelected: true)
-        }
-        let photoLibraryAction = UIAlertAction(title: "Photo Library", style: .default) { [weak self] alertAction in
-            self?.showImageController(isCameraSelected: false)
-        }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-        
-        // check is camera is available, if camera is not available and you attempt to show
-    
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            alertController.addAction(cameraAction)
-        }
-        alertController.addAction(photoLibraryAction)
-        alertController.addAction(cancelAction)
-        present(alertController, animated: true)
-    }
-    
-    
     
     
     //MARK: the sign out button needs to be removed from here once, i have create the side meanue 

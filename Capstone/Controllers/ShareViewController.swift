@@ -12,9 +12,9 @@ import FirebaseAuth
 
 class ShareViewController: UIViewController {
     
-    @IBOutlet weak var writeCaptionText: UITextField!
+    @IBOutlet weak var writeCaptionTextField: UITextField!
     @IBOutlet weak var uploadedPhoto: UIImageView!
-    @IBOutlet weak var captionLabel: UILabel!
+    @IBOutlet weak var labelCaption: UILabel!
     
     private var selectedImage: UIImage
     private let db = DatabaseService()
@@ -36,11 +36,11 @@ class ShareViewController: UIViewController {
         
     }
     
-    @IBAction func shareButtonPressed(_ sender: UIBarButtonItem) {
+    @IBAction func sharePostButtonPressed(_ sender: UIBarButtonItem) {
         
-        guard let caption = writeCaptionText.text, !caption.isEmpty else {
-            captionLabel.textColor = .red
-            captionLabel.text = "A caption is required in order to post"
+        guard let caption = writeCaptionTextField.text, !caption.isEmpty else {
+            labelCaption.textColor = .red
+            labelCaption.text = "A caption is required in order to post"
             return
         }
         

@@ -23,9 +23,9 @@ class PostVC: UIViewController {
 
     }()
     
-    override func viewDidLayoutSubviews() {
-        photoLibraryButton.layer.cornerRadius = 6
-        cameraButton.layer.cornerRadius = 6
+    override func viewWillLayoutSubviews() {
+        photoLibraryButton.layer.cornerRadius = 5.0
+        cameraButton.layer.cornerRadius = 5.0
     }
 
     override func viewDidLoad() {
@@ -63,12 +63,11 @@ extension PostVC: UIImagePickerControllerDelegate, UINavigationControllerDelegat
         dismiss(animated: true, completion: nil)
 
         let appView = UIStoryboard(name: "Main", bundle: nil)
-        let sharedVC = appView.instantiateViewController(identifier: "PostVC") { (coder) in
-            return PostVC(coder: coder)
+        let sharedVC = appView.instantiateViewController(identifier: "ShareViewController") { (coder) in
+            return ShareViewController(coder: coder, selectedImage: image)
 
         }
-        
-
-
+        sharedVC.modalPresentationStyle = .fullScreen
+        present(UINavigationController(rootViewController: sharedVC), animated: true)
     }
 }
