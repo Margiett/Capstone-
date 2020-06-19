@@ -39,7 +39,7 @@ class FeedCell: UICollectionViewCell {
     
     
     public func confirgureCell(post: Post) {
-        updateUI()
+       // updateUI()
         
         
         if let user = Auth.auth().currentUser, let displayname = user.displayName {
@@ -95,22 +95,23 @@ class FeedCell: UICollectionViewCell {
     }
     
     // this is checking is the post is favorited or not 
-    private func updateUI() {
-        DatabaseService().isPostFavorited(post: post) { [weak self] (result) in
-            switch result {
-            case .failure(let error):
-                DispatchQueue.main.async {
-                    self?.showAlert(title: "try again", message: error.localizedDescription)
-                }
-            case .success(let success):
-                if success {
-                    self?.isFavorite = true
-                } else {
-                    self?.isFavorite = false
-                }
-            }
-        }
-    }
+//    private func updateUI() {
+//
+//        DatabaseService().isPostFavorited(post: post) { [weak self] (result) in
+//            switch result {
+//            case .failure(let error):
+//                DispatchQueue.main.async {
+//                    self?.showAlert(title: "try again", message: error.localizedDescription)
+//                }
+//            case .success(let success):
+//                if success {
+//                    self?.isFavorite = true
+//                } else {
+//                    self?.isFavorite = false
+//                }
+//            }
+//        }
+//    }
     
    }
 
