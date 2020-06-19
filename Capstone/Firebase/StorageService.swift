@@ -18,11 +18,11 @@ class StorageService {
   // let's create a reference to the Firebase storage
   private let storageRef = Storage.storage().reference()
   
-  private init() {}
-  static let shared = StorageService()
+//  private init() {}
+//  static let shared = StorageService()
   
   // default parameters in Swift e.g userId: String? = nil
-  public func uploadPhoto(userId: String? = nil, itemId: String? = nil, image: UIImage, completion: @escaping (Result<URL, Error>) -> ()) {
+  public func uploadPhoto(userId: String? = nil, postId: String? = nil, image: UIImage, completion: @escaping (Result<URL, Error>) -> ()) {
     
     // 1. convert UIImage to Data because this is the object we are posting to Firebase Storage
     guard let imageData = image.jpegData(compressionQuality: 1.0) else {

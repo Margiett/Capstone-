@@ -67,7 +67,7 @@ extension PostVC: UIImagePickerControllerDelegate, UINavigationControllerDelegat
             return PostVC(coder: coder)
 
         }
-        sharedVC.modalPre
+        
 
 
     }

@@ -59,7 +59,7 @@ class ShareViewController: UIViewController {
     }
     
     private func uploadedPhoto(image: UIImage, postID: String) {
-        storageService.uploadedPhoto(postID: postID, image: image) {
+        storageService.uploadPhoto(postId: postID, image: image) {
             [weak self] (result) in
             switch result {
             case .failure(let error):
