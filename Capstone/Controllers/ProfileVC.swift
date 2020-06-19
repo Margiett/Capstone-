@@ -132,7 +132,7 @@ class ProfileVC: UIViewController {
         
         let resizedImage = UIImage.resizeImage(originalImage: selectedImage, rect: mainProfilePic.bounds)
         
-        StorageService.shared.uploadPhoto(userId: user.uid, image: resizedImage) { [weak self] (result) in
+        StorageService().uploadPhoto(userId: user.uid, image: resizedImage) { [weak self] (result) in
             switch result {
             case .failure(let error):
                 DispatchQueue.main.async {

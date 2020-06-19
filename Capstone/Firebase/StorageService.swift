@@ -34,7 +34,7 @@ class StorageService {
     
     if let userId = userId { // coming from ProfileViewController
       photoReference = storageRef.child("UserProfilePhotos/\(userId).jpg")
-    } else if let itemId = itemId { // coming from CreateItemViewController
+    } else if let itemId = postId { // coming from CreateItemViewController
       photoReference = storageRef.child("ItemsPhotos/\(itemId).jpg")
     }
     
