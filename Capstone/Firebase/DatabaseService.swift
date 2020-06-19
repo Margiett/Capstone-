@@ -22,6 +22,23 @@ class DatabaseService {
      // private init() {}
     //static let shared = DatabaseService()
     
+    public func createPost(caption: String, completion: @escaping (Result<String, Error>) -> ()) {
+        guard let user = Auth.auth().currentUser else { return }
+        let documentRef = db.collection(DatabaseService.postCollection).document()
+        //MARK: need to figure out why i can call postID: post.postID
+        db.collection(DatabaseService.postCollection).document(documentRef.documentID).setData(["caption": caption, "userId": user.uid, "userName": user.displayName ?? "", "datePosted": Timestamp(date: Date())]) { (error) in
+            if let error = error {
+                completion (.failure(error))
+                print("error creating item: \(error)")
+            } else {
+                completion (.success(documentRef.documentID))
+                print("item was created: \(documentRef.documentID)")
+            }
+            
+        }
+        
+    }
+    
     
     //Creating the user(dog owner)
     public func createUser(user: UserModel, authDataResult: AuthDataResult, completion: @escaping (Result<Bool, Error>) -> ()) {

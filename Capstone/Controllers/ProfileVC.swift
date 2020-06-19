@@ -46,10 +46,6 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var thirdPicEditButton: UIButton!
     
     
-    
-    
-    
-    
     private lazy var imagePickerController: UIImagePickerController = {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
