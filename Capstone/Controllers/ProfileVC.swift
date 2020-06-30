@@ -19,6 +19,8 @@ enum ViewState {
 class ProfileVC: UIViewController {
     
     var editState = 0
+    var segMyPost = 0
+    var segMyProfile = 0
     
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var followersLabel: UILabel!
@@ -44,6 +46,8 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var firstPicEditbutton: UIButton!
     @IBOutlet weak var secondPicEditButton: UIButton!
     @IBOutlet weak var thirdPicEditButton: UIButton!
+    
+    private var viewState: ViewState!
     
     
     private lazy var imagePickerController: UIImagePickerController = {
@@ -74,7 +78,7 @@ class ProfileVC: UIViewController {
             secondMainPic.image = selectedImageThree
         }
     }
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -148,19 +152,32 @@ class ProfileVC: UIViewController {
     
     @IBAction func cancelButtonPressed(_ sender: UIButton) {
         editState = 0
-        editProfile.isHidden = false
-        cancelButton.isHidden = true
-        saveButton.isHidden = true
-        
+        editProfile.isHidden = false // is the editstate is 0 than the editProfil will not be hidden
+        cancelButton.isHidden = true // if the edit state is 0 than the cancel button will be hidden
+        saveButton.isHidden = true is // if the edit state is 0 than the save button will be hidded
+    
+            
         editDetailNameTextField.isHidden = true
         editLocationTextField.isHidden = true
         editAboutMeTextField.isHidden = true
         
-        detailLabel.alpha = 1.0
+        detailLabel.alpha = 1.0 // if everything in the edit e
         secondDetailLabel.alpha = 1.0
         aboutMeLabel.alpha = 1.0
     }
     
+    @IBAction func segmentedControlPressed(_ sender: UISegmentedControl){
+        // toggle current viewState value
+        switch sender.selectedSegmentIndex {
+        case 0:
+            viewState = .myProfile
+            
+        case 1:
+            viewState = .myPost
+        default:
+            break
+        }
+    }
     
     
     
