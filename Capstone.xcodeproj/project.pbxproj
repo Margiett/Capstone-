@@ -17,6 +17,8 @@
 		9F325C3D248029A3003C39F4 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F325C3C248029A3003C39F4 /* MainTabBarController.swift */; };
 		9F325C3F24802A69003C39F4 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F325C3E24802A69003C39F4 /* UIViewControllerExtensions.swift */; };
 		9F325C4124802B89003C39F4 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F325C4024802B89003C39F4 /* SignUpViewController.swift */; };
+		9F4DA69624A396150071E413 /* ProfileSegmentedControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4DA69524A396150071E413 /* ProfileSegmentedControllerView.swift */; };
+		9F4DA69824A398680071E413 /* ProfileSegCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4DA69724A398680071E413 /* ProfileSegCell.swift */; };
 		9F7DCDBF247DCA3800ABB84D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7DCDBE247DCA3800ABB84D /* AppDelegate.swift */; };
 		9F7DCDC1247DCA3800ABB84D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7DCDC0247DCA3800ABB84D /* SceneDelegate.swift */; };
 		9F7DCDC6247DCA3800ABB84D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F7DCDC4247DCA3800ABB84D /* Main.storyboard */; };
@@ -68,6 +70,8 @@
 		9F325C3C248029A3003C39F4 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		9F325C3E24802A69003C39F4 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		9F325C4024802B89003C39F4 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		9F4DA69524A396150071E413 /* ProfileSegmentedControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSegmentedControllerView.swift; sourceTree = "<group>"; };
+		9F4DA69724A398680071E413 /* ProfileSegCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSegCell.swift; sourceTree = "<group>"; };
 		9F7DCDBB247DCA3800ABB84D /* Capstone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Capstone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F7DCDBE247DCA3800ABB84D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F7DCDC0247DCA3800ABB84D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -201,6 +205,15 @@
 			path = TabBarController;
 			sourceTree = "<group>";
 		};
+		9F4DA69424A395E60071E413 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9F4DA69524A396150071E413 /* ProfileSegmentedControllerView.swift */,
+				9F4DA69724A398680071E413 /* ProfileSegCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		9F7DCDB2247DCA3800ABB84D = {
 			isa = PBXGroup;
 			children = (
@@ -224,6 +237,7 @@
 		9F7DCDBD247DCA3800ABB84D /* Capstone */ = {
 			isa = PBXGroup;
 			children = (
+				9F4DA69424A395E60071E413 /* Views */,
 				9F84A3752489E932008111BC /* Cell */,
 				9F325C3B24802928003C39F4 /* TabBarController */,
 				9F325C3824801F59003C39F4 /* Controllers */,
@@ -430,6 +444,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F325C3A24801FE7003C39F4 /* LoginViewController.swift in Sources */,
+				9F4DA69624A396150071E413 /* ProfileSegmentedControllerView.swift in Sources */,
 				9F84A37924901676008111BC /* Constants.swift in Sources */,
 				9F325C3F24802A69003C39F4 /* UIViewControllerExtensions.swift in Sources */,
 				9F325C3D248029A3003C39F4 /* MainTabBarController.swift in Sources */,
@@ -437,6 +452,7 @@
 				9F84A3742487F47C008111BC /* PostModel.swift in Sources */,
 				9FB984B9249C173D006B1D0D /* PostVC.swift in Sources */,
 				9F84A37C24904F2A008111BC /* CommentVC.swift in Sources */,
+				9F4DA69824A398680071E413 /* ProfileSegCell.swift in Sources */,
 				9F325C2F24801034003C39F4 /* DatabaseService.swift in Sources */,
 				9F84A36B2486B444008111BC /* CommentModel.swift in Sources */,
 				9FD30CFB24981A0D00F0733A /* UIImage+Extension.swift in Sources */,

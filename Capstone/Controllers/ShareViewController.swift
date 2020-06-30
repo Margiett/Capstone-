@@ -46,7 +46,9 @@ class ShareViewController: UIViewController {
         
         let reSizedImage = UIImage.resizeImage(originalImage: selectedImage, rect: uploadedPhoto.bounds)
         
-        db.createPost(caption: caption) { [weak self] (result) in
+        db.createPost(caption: caption, displayName: displayName, imageURL: imageURL) { [weak self ] (result) in
+        
+        //createPost(caption: caption, imageURL: imageURL, displayName: displayName) { [weak self] (result) in
             switch result {
             case .failure(let error):
                 DispatchQueue.main.async {
