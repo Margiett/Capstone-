@@ -34,13 +34,13 @@ class DatabaseService {
      }
      */
     
-    public func createPost(caption: String, displayName: String, imageURL: String, completion: @escaping (Result<String, Error>) -> ()) {
+    public func createPost(caption: String, displayName: String, completion: @escaping (Result<String, Error>) -> ()) {
         
         
         guard let user = Auth.auth().currentUser else { return }
         let documentRef = db.collection(DatabaseService.postCollection).document()
         //MARK: need to figure out why i can call postID: post.postID
-        db.collection(DatabaseService.postCollection).document(documentRef.documentID).setData(["imageURL": imageURL, "caption": caption, "userId": user.uid, "userName": user.displayName ?? "", "datePosted": Timestamp(date: Date())]) { (error) in
+        db.collection(DatabaseService.postCollection).document(documentRef.documentID).setData(["caption": caption, "userId": user.uid, "userName": user.displayName ?? "", "datePosted": Timestamp(date: Date())]) { (error) in
             
             
             if let error = error {

@@ -37,7 +37,7 @@ class ShareViewController: UIViewController {
     }
     
     @IBAction func sharePostButtonPressed(_ sender: UIBarButtonItem) {
-        
+        // need to add imageURL and displayNameURL reson for the errors.
         guard let caption = writeCaptionTextField.text, !caption.isEmpty else {
             labelCaption.textColor = .red
             labelCaption.text = "A caption is required in order to post"
@@ -46,7 +46,7 @@ class ShareViewController: UIViewController {
         
         let reSizedImage = UIImage.resizeImage(originalImage: selectedImage, rect: uploadedPhoto.bounds)
         
-        db.createPost(caption: caption, displayName: displayName, imageURL: imageURL) { [weak self ] (result) in
+        db.createPost(caption: caption, displayName: "", imageURL: "") { [weak self ] (result) in
         
         //createPost(caption: caption, imageURL: imageURL, displayName: displayName) { [weak self] (result) in
             switch result {

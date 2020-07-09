@@ -154,7 +154,7 @@ class ProfileVC: UIViewController {
         editState = 0
         editProfile.isHidden = false // is the editstate is 0 than the editProfil will not be hidden
         cancelButton.isHidden = true // if the edit state is 0 than the cancel button will be hidden
-        saveButton.isHidden = true is // if the edit state is 0 than the save button will be hidded
+        saveButton.isHidden = true // if the edit state is 0 than the save button will be hidded
     
             
         editDetailNameTextField.isHidden = true
@@ -171,7 +171,6 @@ class ProfileVC: UIViewController {
         switch sender.selectedSegmentIndex {
         case 0:
             viewState = .myProfile
-            
         case 1:
             viewState = .myPost
         default:
